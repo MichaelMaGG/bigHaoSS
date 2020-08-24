@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ggmanz.co.nz.bigHaoSS.entity.UserInfo">
+
+    <insert id="insert" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO userinfo(id,name) VALUES(#{id},#{name})
+    </insert>
+
+    <update id="update" parameterType="UserInfo">
+
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM userinfo WHERE id=#{id}
+    </delete>
+
+    <select id="selectPersonById" resultType="UserInfo">
+        select * from userinfo where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="UserInfo">
+        SELECT * FROM userinfo
+    </select>
+
+
+</mapper>
