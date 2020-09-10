@@ -3,8 +3,11 @@ package com.ggmanz.co.nz.bigHaoSS.controller;
 import com.ggmanz.co.nz.bigHaoSS.entity.UserInfo;
 import com.ggmanz.co.nz.bigHaoSS.mapper.UserInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 
 /**
@@ -17,15 +20,16 @@ public class UserController {
     private UserInfoMapper userInfoMapper;
 
     @RequestMapping("/hello")
-    public String getHello(String name) {
-        StringBuilder sb = new StringBuilder("welcome to BigHaoS! ");
+    public String getHello(String name) throws UnknownHostException {
+        StringBuilder sb = new StringBuilder("Welcome to BigHaoSS! ");
         if (name != null && name.length() > 0) {
             sb.append(name).append("!");
         } else {
             sb.append("friends!").append("!");
         }
         System.out.println("welcome:" + name );
-        return sb.toString();
+
+        return sb.toString() + "from " +InetAddress.getLocalHost().getHostAddress();
     }
 
 

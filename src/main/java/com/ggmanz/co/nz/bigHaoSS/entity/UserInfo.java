@@ -1,9 +1,11 @@
 package com.ggmanz.co.nz.bigHaoSS.entity;
 
+import lombok.Data;
 
 /**
  * Created by mazhuang on 2018/6/27.
  */
+@Data
 public class UserInfo {
 
     private int    id;
