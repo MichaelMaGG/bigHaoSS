@@ -1,0 +1,3 @@
+
+
+helm install --values=specific.yaml <chartname>

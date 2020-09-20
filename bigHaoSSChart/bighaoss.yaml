@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.name}}
+spec:
+  type: {{ .Values.spec.type}}
+  selector:
+    app:big_hao_ss
+  ports:
+  - protocol: TCP
+    port: 18090
+    targetPort: 8090
+    nodePort: 18091
+  containers:
+  - name: big_hao_ss
+    image: big_hao_ss
+    imagePullPolicy: Never

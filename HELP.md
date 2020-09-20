@@ -10,12 +10,17 @@ For further reference, please consider the following sections:
 # command to start server
 # /mvnw spring-boot:run
 
+# docker container run -p 8090:8090
+
 # build this project
 # mvn -f pom.xml clean package -DskipTests dockerfile:build
 
-# docker tag springbootdemo:0.0.1-SNAPSHOT michaelggmanz/springbootdemo
+# docker tag big_hao_ss:0.0.1-SNAPSHOT michaelggmanz/big_hao_ss:latest
+# docker image push michaelggmanz/big_hao_ss:latest
 
 # kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 
 # export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
 # echo Name of the Pod: $POD_NAME
+
+kubectl create deployment hello-node --image=michaelggmanz/big_hao_ss:latest
